@@ -5,7 +5,7 @@
 
 <?php endforeach;?>
 
-
+<?php
 $q = DB::select('id','maktx_ru','ean11','url')
 	->from('furshet_tovars')
 	->where('id', 'IN', count($ids) ? $ids : array(-1) )
