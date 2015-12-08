@@ -6,6 +6,8 @@
 <?php endforeach;?>
 
 <?php
+
+#select
 $q = DB::select('id','maktx_ru','ean11','url')
 	->from('furshet_tovars')
 	->where('id', 'IN', count($ids) ? $ids : array(-1) )
@@ -13,11 +15,6 @@ $q = DB::select('id','maktx_ru','ean11','url')
 	//->as_array('id',null)
 	;
 
-$periods = arr::extract(Kohana::$config->load('constants.times'), array(1,2));
-
-		#select
-
-			
 		#update
 		$arr = array(
 			'ping' =>time(),
@@ -45,6 +42,7 @@ $periods = arr::extract(Kohana::$config->load('constants.times'), array(1,2));
 				time(),
 			))->execute();
 			
+$periods = arr::extract(Kohana::$config->load('constants.times'), array(1,2));
 			
 		join c перекрывающимися idate
 
