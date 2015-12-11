@@ -2,29 +2,27 @@
 # php
 
 <?php foreach ($items as $itm):?>
-
 <?php endforeach;?>
 
 <?php
-
-#select
+# select
 $q = DB::select('id','maktx_ru','ean11','url')
 	->from('furshet_tovars')
 	->where('id', 'IN', count($ids) ? $ids : array(-1) )
 	->execute()
-	//->as_array('id',null)
+	->as_array('id',null)
 	;
 
-		#update
-		$arr = array(
-			'ping' =>time(),
-			'ip'   =>$ip,
-			);
+# update
+$arr = array(
+	'ping' =>time(),
+	'ip'   =>$ip,
+	);
 
-		$dbrq = DB::update('lamp_units')
-			->set($arr)
-			->where('furshet_orders.id', '=', $order->id )
-			->execute(LCDD);
+$q = DB::update('lamp_units')
+	->set($arr)
+	->where('furshet_orders.id', '=', $order->id )
+	->execute(LCDD);
 	
 
 		$insert = DB::insert('lamp_units',array(
