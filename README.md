@@ -1,11 +1,11 @@
 # snipets
-# php
+// php
 
 <?php foreach ($items as $itm):?>
 <?php endforeach;?>
 
 <?php
-# select
+// select
 $q = DB::select('id','maktx_ru','ean11','url')
 	->from('furshet_tovars')
 	->where('id', 'IN', count($ids) ? $ids : array(-1) )
@@ -13,7 +13,7 @@ $q = DB::select('id','maktx_ru','ean11','url')
 	->as_array('id',null)
 	;
 
-# update
+// update
 $arr = array(
 	'ping' =>time(),
 	'ip'   =>$ip,
@@ -25,21 +25,21 @@ $q = DB::update('lamp_units')
 	->execute(LCDD);
 	
 
-		$insert = DB::insert('lamp_units',array(
-				#------------
-				'id',
-				'key_hash',
-				'created',
-				'one-time-pass-expr',
+$insert = DB::insert('lamp_units',array(
+		#------------
+		'id',
+		'key_hash',
+		'created',
+		'one-time-pass-expr',
 
-			))->values(array(
-				#------------
-				$lamp_id,
-				$key1,
-				time(),
-				time(),
-			))->execute();
-			
+	))->values(array(
+		#------------
+		$lamp_id,
+		$key1,
+		time(),
+		time(),
+	))->execute();
+?>			
 $periods = arr::extract(Kohana::$config->load('constants.times'), array(1,2));
 			
 		join c перекрывающимися idate
