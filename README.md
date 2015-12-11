@@ -1,12 +1,12 @@
-// snipets
+# snipets
 // php
 ```
 <?php foreach ($items as $itm):?>
-//
+..
 <?php endforeach;?>
 
 <?php
-// select
+# select
 $q = DB::select('id','maktx_ru','ean11','url')
 	->from('furshet_tovars')
 	->where('id', 'IN', count($ids) ? $ids : array(-1) )
@@ -14,7 +14,7 @@ $q = DB::select('id','maktx_ru','ean11','url')
 	->as_array('id',null)
 	;
 
-// update
+# update
 $arr = array(
 	'ping' =>time(),
 	'ip'   =>$ip,
