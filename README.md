@@ -45,6 +45,9 @@ $insert = DB::insert('lamp_units',array(
 # detect uri
 $current_url = URL::site(Request::detect_uri(), TRUE) . URL::query();
 
+#
+$obj= new stdClass();
+
 $periods = arr::extract(Kohana::$config->load('constants.times'), array(1,2));
 			
 		join c перекрывающимися idate
