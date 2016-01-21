@@ -1,4 +1,19 @@
 # snipets
+// linux
+```
+место
+df -h
+
+пхп консоль
+/usr/bin/php /var/www/maxim/data/www/radio.altsolution.ua/index.php --uri=cron/db_art_stage_1
+
+база
+mysql -u radio -p radio < big.sql
+
+tar
+tar -xf архив.tar
+
+```
 // php
 ```
 <?php foreach ($items as $itm):?>
