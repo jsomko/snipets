@@ -14,6 +14,9 @@ $('form[name="frmSave"]')
 место
 df -h
 
+прав
+chmod -R 777 /home/efurshet/www/upload/in/photos
+
 пхп консоль
 /usr/bin/php /var/www/maxim/data/www/radio.altsolution.ua/index.php --uri=cron/db_art_stage_1
 
