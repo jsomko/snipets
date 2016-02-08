@@ -388,3 +388,15 @@ $rrr = imagettftext($img, $size, $angle, $x, $y, $c, $font, $text);
 var_dump($rrr);
 
 imagejpeg ( $img,'123z.jpg',100 );
+
+
+# залепить в базу левое поле
+		# забираем из базы только то что нужно
+		$db = DB::select('tp.id','tp.name','tp.is_available',
+			array(DB::expr('null'),'price_s'),
+			array(DB::expr('null'),'price_m'),
+			array(DB::expr('null'),'price_l'),
+			array(DB::expr('null'),'price_xl'),
+			array(DB::expr('null'),'price_u'),
+			array(DB::expr('null'),'image')
+			);
