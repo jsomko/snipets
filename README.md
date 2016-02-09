@@ -34,6 +34,9 @@ tar -xf архив.tar
 <?php endforeach;?>
 
 <?php
+#
+->order_by(DB::expr('RAND()'))
+
 # select
 $q = DB::select('id','maktx_ru','ean11','url')
 	->from('furshet_tovars')
