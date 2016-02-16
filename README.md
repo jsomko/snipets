@@ -13,6 +13,8 @@ $('form[name="frmSave"]')
 
 // linux
 ```
+VISUAL=vi crontab -e
+
 место
 df -h
 
