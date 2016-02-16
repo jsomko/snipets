@@ -6,6 +6,8 @@ $('div[name=^tcol1]')
 
 $('form[name="frmSave"]')
 
+пустой клик
+<a class="nolink" href="javascript:;">Интернет - магазин</a><!-- fix_me-->
 ```
 
 
