@@ -407,3 +407,13 @@ imagejpeg ( $img,'123z.jpg',100 );
 			array(DB::expr('null'),'price_u'),
 			array(DB::expr('null'),'image')
 			);
+
+
+# 29-02-2016
+# шаманство со сфинксом на тесте
+1. свалить все в кучу сфинкс.conf
+2. service sphinxsearch stop
+3. top+kill все демоны сфинкса
+4. service sphinxsearch start
+
+мониторить ошибки, добавлять пустые файлы на которые ругается, chmod 777
