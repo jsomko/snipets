@@ -13,10 +13,14 @@ $('form[name="frmSave"]')
 
 // linux
 ```
-VISUAL=vi crontab -e
 
-место
-df -h
+всякие ништяки 
+
+service httpd restart    - перезагрузить демона
+
+VISUAL=vi crontab -e    - открыть в .. вместо дефолтного(бывает бебебе)
+
+df -h     - место
 
 прав
 chmod -R 777 /home/efurshet/www/upload/in/photos
