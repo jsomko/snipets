@@ -2,7 +2,7 @@
 в архив
 tar -cvf arh_22_03_2016.tar /var/www/flora/
 
-
+wget arh_22_03_2016.tar
 
 пак
 tar -cvf file.tar /full/path
@@ -10,7 +10,8 @@ tar -cvf file.tar /full/path
 разпак
 tar -xf архив.tar
 
-
+версия
+cat /proc/version
 
 
 разное из переноса фуршета
