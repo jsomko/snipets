@@ -1,0 +1,125 @@
+
+
+tar -cvf file.tar /full/path
+
+
+
+
+
+
+разное из переноса фуршета
+#21-03-2016
+mysql -u root -p
+CREATE DATABASE efurshet_lviv;
+CREATE DATABASE efurshet_dnepr;
+
+GRANT ALL PRIVILEGES ON efurshet_lviv.* TO efurshet@localhost IDENTIFIED BY 'jJKYKrAtmYBY';
+GRANT ALL PRIVILEGES ON efurshet_dnepr.* TO efurshet@localhost IDENTIFIED BY 'jJKYKrAtmYBY';
+
+win
+mysql -u root furshet_dnepr < f:\e.sql
+
+nix
+mysql -u root -p efurshet_lviv < /home/empty.sql
+mysql -u root -p efurshet_dnepr < /home/empty.sql
+
+фтки
+ln -s /home/efurshet/www/upload/1/tovar_foto/ /home/efurshet/www/upload/3/
+ln -s /home/efurshet/www/upload/1/tovar_photos /home/efurshet/www/upload/3/
+
+ln -s /home/efurshet/www/upload/1/tovar_foto/ /home/efurshet/www/upload/4/
+ln -s /home/efurshet/www/upload/1/tovar_photos /home/efurshet/www/upload/4/
+
+тест
+куда - кде положить
+ln -s /var/www/maxim/data/www/furshet.altsolution.ua/upload/1/tovar_photos/ /var/www/maxim/data/www/furshet.altsolution.ua/upload/3
+
+
+
+#
+efurshet_default
+efurshet_kiev
+efurshet_odessa
+
+CREATE DATABASE efurshet_default;
+CREATE DATABASE efurshet_kiev;
+CREATE DATABASE efurshet_odessa;
+
+GRANT ALL PRIVILEGES ON efurshet_default.* TO efurshet@localhost IDENTIFIED BY 'jJKYKrAtmYBY';
+GRANT ALL PRIVILEGES ON efurshet_kiev.* TO efurshet@localhost IDENTIFIED BY 'jJKYKrAtmYBY';
+GRANT ALL PRIVILEGES ON efurshet_odessa.* TO efurshet@localhost IDENTIFIED BY 'jJKYKrAtmYBY';
+
+
+GRANT ALL PRIVILEGES ON efurshet_default.* TO efurshet IDENTIFIED BY 'jJKYKrAtmYBY';
+GRANT ALL PRIVILEGES ON efurshet_kiev.* TO efurshet IDENTIFIED BY 'jJKYKrAtmYBY';
+GRANT ALL PRIVILEGES ON efurshet_odessa.* TO efurshet IDENTIFIED BY 'jJKYKrAtmYBY';
+
+#тушим боевой
+index.php - die();
+
+# миграция с боевого
+# дамп базы копируется в efurshet_default и efurshet_kiev
+gzip -d efurshet.gz
+
+для дефолтной - без тяжелых таблиц - быстрей будет
+mysql -u root -p efurshet_default < /home/dump/03.06.2015/efurshet_d.sql
+дропнуть - левые ключи
+дропнуть - таблицы fur_drops_4_def.txt
+
+для основной - долго
+mysql -u root -p efurshet_kiev < /home/dump/03.06.2015/efurshet.sql
+
+
+mysql -u root -p efurshet_odessa < /home/dump/03.06.2015/efurshet_empty_odessa.sql
+
+для efurshet_default
+DROP TABLE `contents`;
+
+
+для базы efurshet_default
+перед дропом
+# ---
+ALTER TABLE `furshet_orders`
+	DROP FOREIGN KEY `FK_furshet_orders_users`;
+	
+ALTER TABLE `furshet_orders__lost`
+	DROP FOREIGN KEY `FK_furshet_orders__lost_users`;
+	
+ALTER TABLE `furshet_tovars`
+	DROP FOREIGN KEY `FK_furshet_tovars_furshet_categories`;
+
+	
+
+для базы efurshet_kiev
+перед дропом
+# ---
+ALTER TABLE `furshet_ask`
+	DROP FOREIGN KEY `FK_furshet_ask_users`;
+	
+ALTER TABLE `users`
+	DROP FOREIGN KEY `fk_users_roles1`;	
+
+ALTER TABLE `furshet_periodic`
+	DROP FOREIGN KEY `FK_furshet_periodic_users`;
+	
+ALTER TABLE `furshet_orders`
+	DROP FOREIGN KEY `FK_furshet_orders_users`;
+	
+ALTER TABLE `furshet_orders_has_history`
+	DROP FOREIGN KEY `FK_furshet_orders_has_history_users`;
+	
+ALTER TABLE `furshet_orders__lost`
+	DROP FOREIGN KEY `FK_furshet_orders__lost_users`;
+	
+ALTER TABLE `furshet_orders__lost_has_history`
+	DROP FOREIGN KEY `FK_furshet_losthistory_has_history_users`;
+	
+	
+после актуализации баз
+ключи мультидомена в таблицах
+SMS
+ALTER TABLE `furshet_orders_sms_arhive`
+	ADD COLUMN `md_key` TINYINT(1) UNSIGNED NULL DEFAULT NULL AFTER `created`;
+
+	
+# поменять настройки доменов на боевые с конфигах сайта
