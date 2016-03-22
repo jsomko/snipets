@@ -1,8 +1,10 @@
 
 
+пак
 tar -cvf file.tar /full/path
 
-
+разпак
+tar -xf архив.tar
 
 
 
