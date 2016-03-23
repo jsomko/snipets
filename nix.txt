@@ -1,14 +1,23 @@
-быстрый перезд
+быстрый перезд flora
 в архив
 tar -cvf arh_22_03_2016.tar /var/www/flora/
+wget ...arh_22_03_2016.tar
 
-wget arh_22_03_2016.tar
+
+база
+mysql -u adminuser1234 -p
+show databases;
+CREATE DATABASE flora;
+...
+mysql -u floraaromatics -p floraaromatics < /home/adminuser1234/flora.sql
+
 
 пак
 tar -cvf file.tar /full/path
 
 разпак
 tar -xf архив.tar
+tar -xf flora.tar
 
 версия
 cat /proc/version
