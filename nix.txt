@@ -1,3 +1,11 @@
+перезд лорашен
+tar -cvf upload.tar /var/www/maxim/data/www/lorashen.altsolution.ua/upload
+wget http://185.25.116.155/upload.tar
+
+
+mysql -u lorashen_user -p lorashen < /home/lorashen.sql
+
+
 быстрый перезд flora
 в архив
 tar -cvf arh_22_03_2016.tar /var/www/flora/
@@ -9,12 +17,10 @@ mysql -u adminuser1234 -p
 show databases;
 CREATE DATABASE flora;
 ...
-mysql -u floraaromatics -p floraaromatics < /home/adminuser1234/flora.sql
+mysql -u floraaromatics -p floraaromatics < /home/admin/flora.sql
 
 
-пак
-tar -cvf file.tar /full/path
-cp /home/adminuser1234/public_html/flora.tar /home/adminuser1234/dump/23-03-2016
+
 
 разпак
 tar -xf архив.tar
@@ -30,8 +36,8 @@ mysql -u root -p
 CREATE DATABASE efurshet_lviv;
 CREATE DATABASE efurshet_dnepr;
 
-GRANT ALL PRIVILEGES ON efurshet_lviv.* TO efurshet@localhost IDENTIFIED BY 'jJKYKrAtmYBY';
-GRANT ALL PRIVILEGES ON efurshet_dnepr.* TO efurshet@localhost IDENTIFIED BY 'jJKYKrAtmYBY';
+GRANT ALL PRIVILEGES ON efurshet_lviv.* TO efurshet@localhost IDENTIFIED BY 'pass';
+GRANT ALL PRIVILEGES ON efurshet_dnepr.* TO efurshet@localhost IDENTIFIED BY 'pass';
 
 win
 mysql -u root furshet_dnepr < f:\e.sql
@@ -62,14 +68,14 @@ CREATE DATABASE efurshet_default;
 CREATE DATABASE efurshet_kiev;
 CREATE DATABASE efurshet_odessa;
 
-GRANT ALL PRIVILEGES ON efurshet_default.* TO efurshet@localhost IDENTIFIED BY 'jJKYKrAtmYBY';
-GRANT ALL PRIVILEGES ON efurshet_kiev.* TO efurshet@localhost IDENTIFIED BY 'jJKYKrAtmYBY';
-GRANT ALL PRIVILEGES ON efurshet_odessa.* TO efurshet@localhost IDENTIFIED BY 'jJKYKrAtmYBY';
+GRANT ALL PRIVILEGES ON efurshet_default.* TO efurshet@localhost IDENTIFIED BY 'pass';
+GRANT ALL PRIVILEGES ON efurshet_kiev.* TO efurshet@localhost IDENTIFIED BY 'pass';
+GRANT ALL PRIVILEGES ON efurshet_odessa.* TO efurshet@localhost IDENTIFIED BY 'pass';
 
 
-GRANT ALL PRIVILEGES ON efurshet_default.* TO efurshet IDENTIFIED BY 'jJKYKrAtmYBY';
-GRANT ALL PRIVILEGES ON efurshet_kiev.* TO efurshet IDENTIFIED BY 'jJKYKrAtmYBY';
-GRANT ALL PRIVILEGES ON efurshet_odessa.* TO efurshet IDENTIFIED BY 'jJKYKrAtmYBY';
+GRANT ALL PRIVILEGES ON efurshet_default.* TO efurshet IDENTIFIED BY 'pass';
+GRANT ALL PRIVILEGES ON efurshet_kiev.* TO efurshet IDENTIFIED BY 'pass';
+GRANT ALL PRIVILEGES ON efurshet_odessa.* TO efurshet IDENTIFIED BY 'pass';
 
 #тушим боевой
 index.php - die();
