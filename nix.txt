@@ -1,8 +1,10 @@
 перезд лорашен
 tar -cvf upload.tar /var/www/maxim/data/www/lorashen.altsolution.ua/upload
 wget http://185.25.116.155/upload.tar
+tar -xf upload.tar
+chmod -R 777 /var/www/lorashen/data/www/lorashen.com.ua/upload
 
-
+база
 mysql -u lorashen_user -p lorashen < /home/lorashen.sql
 
 
