@@ -14,6 +14,7 @@ mysql -u floraaromatics -p floraaromatics < /home/adminuser1234/flora.sql
 
 пак
 tar -cvf file.tar /full/path
+cp /home/adminuser1234/public_html/flora.tar /home/adminuser1234/dump/23-03-2016
 
 разпак
 tar -xf архив.tar
