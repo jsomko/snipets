@@ -79,7 +79,18 @@ $insert = DB::insert('lamp_units',array(
 		time(),
 		time(),
 	))->execute();
+
+
+	DB::delete('osbb_houses')
+		->where('id', '=', $id)
+		->execute(LCDD);
+
+
+
 ?>	
+
+
+
 
 # detect uri
 $current_url = URL::site(Request::detect_uri(), TRUE) . URL::query();
