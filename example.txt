@@ -439,3 +439,24 @@ imagejpeg ( $img,'123z.jpg',100 );
 4. service sphinxsearch start
 
 мониторить ошибки, добавлять пустые файлы на которые ругается, chmod 777
+
+красивая штука с подсчетом вхождений
+		// http://stackoverflow.com/questions/16707780/count-how-many-rows-have-the-same-value
+		// SELECT NUM, count(*) as 'Cnt' FROM tbl GROUP BY NUM
+
+		$db= DB::select(
+			array(DB::expr('COUNT(*)'), 'count'),
+			'topic_id'
+			);
+		$db->group_by('topic_id');
+		$db->from(array('osbb_board_messages', 'm'));
+		$db->where('topic_id', 'IN', count($ids) ? $ids : array(-1) );
+
+		$q = $db->execute(LCDD)->as_array();
+
+		$arr = array();
+		foreach ($q as $k=>$t) {
+			$arr[$t['topic_id']] = $t['count'];
+		}
+
+		return $arr;
