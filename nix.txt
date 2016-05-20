@@ -1,7 +1,7 @@
 если не видно модулей
 php -m
 php --ini
-посмотнть путь в пхп ини
+посмотреть путь в пхп инфо в пхп ини
 
 перезд лорашен
 tar -cvf upload.tar /var/www/maxim/data/www/lorashen.altsolution.ua/upload
