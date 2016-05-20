@@ -1,3 +1,8 @@
+если не видно модулей
+php -m
+php --ini
+посмотнть путь в пхп ини
+
 перезд лорашен
 tar -cvf upload.tar /var/www/maxim/data/www/lorashen.altsolution.ua/upload
 wget http://185.25.116.155/upload.tar
