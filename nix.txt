@@ -3,6 +3,13 @@ php -m
 php --ini
 посмотреть путь в пхп инфо в пхп ини
 
+
+всякие 
+
+размер папки
+$ du -s
+$ du -ch | grep total
+
 перезд лорашен
 tar -cvf upload.tar /var/www/maxim/data/www/lorashen.altsolution.ua/upload
 wget http://185.25.116.155/upload.tar
