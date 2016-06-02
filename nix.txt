@@ -10,6 +10,12 @@ php --ini
 $ du -s
 $ du -ch | grep total
 
+
+запаковать
+полный путь нужен
+tar -cvf upload.tar /var/www/maxim/data/www/lorashen.altsolution.ua/upload
+
+
 перезд лорашен
 tar -cvf upload.tar /var/www/maxim/data/www/lorashen.altsolution.ua/upload
 wget http://185.25.116.155/upload.tar
