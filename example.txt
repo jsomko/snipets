@@ -44,6 +44,40 @@ tar -xf архив.tar
 ```
 // php
 ```
+		$q = DB::select('kamelia_flora_units.id',
+			'code',
+			'title_ru',
+			'title_ua',
+			'title_en',
+			'url',
+			'in_ua',
+			'flag',
+			'type',
+			'min_buy',
+			'st_val',
+			array(DB::expr('null'),'image'),		# сразу или после, дополнить выборкой из таблицы с размерами
+			array(DB::expr('null'),'min_cost'),
+			array(DB::expr('null'),'h1'),
+			array(DB::expr('null'),'h2')
+			)
+			->from('kamelia_flora_units')
+			->where('visible', '=', true)
+
+			->where('id', 'IN', count($ids) ? $ids : array(-1) )
+
+			//->as_object('Entity_FloraUnit')
+
+			//->order_by('sort', 'DESC')
+			//->order_by('id', 'DESC')
+
+			//->order_by(DB::expr('field(id, 11, 12, 14)'))
+			->order_by(DB::expr(sprintf("FIND_IN_SET(`id`, '%s')", implode(',', $ids))))
+
+
+			->execute()
+			->as_array('id',null)
+
+			;
 <?php foreach ($items as $itm):?>
 ..
 <?php endforeach;?>
