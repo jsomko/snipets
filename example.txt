@@ -1,3 +1,12 @@
+#loravel-composer-ets
+
+# норм путь для стилей
+php artisan vendor:publish --tag=admin-assets --force
+
+# забрать из компосера
+composer install --no-dev
+
+
 # snipets
 // фишки для работы с времененм
 начало следующего дня
