@@ -6,6 +6,13 @@ php artisan vendor:publish --tag=admin-assets --force
 # забрать из компосера
 composer install --no-dev
 
+# заглушка для миграции
+php artisan make:migration create_discount_table
+
+# дать, забрать последнюю
+php artisan migrate
+php artisan migrate:rollback
+
 
 # snipets
 // фишки для работы с времененм
