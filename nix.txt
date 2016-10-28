@@ -1,6 +1,9 @@
 # посмотреть версию
 dmesg | grep "Linux version"
 
+systemctl restart apache2.service
+
+
 сентос покажет, Ред-Хат + приписку с сентос.орг
 убунта ничего не покажет
 
