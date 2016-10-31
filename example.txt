@@ -63,6 +63,12 @@ tar -xf архив.tar
 
 ```
 // php
+хитрые сортировки для qury билдера
+
+строка как число
+$db->order_by(DB::Expr('length(number),number'));
+
+
 ```
 		$q = DB::select('kamelia_flora_units.id',
 			'code',
