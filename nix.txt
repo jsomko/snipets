@@ -1,3 +1,6 @@
+whereis php - пути к исполняшкам
+
+
 # посмотреть версию
 dmesg | grep "Linux version"
 
