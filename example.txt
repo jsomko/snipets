@@ -1,5 +1,8 @@
 #loravel-composer-ets
 
+бока при миграции
+composer dump-autoload 
+
 # норм путь для стилей
 php artisan vendor:publish --tag=admin-assets --force
 
