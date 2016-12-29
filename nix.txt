@@ -1,13 +1,15 @@
 магия - матрешки с хтаксессом
 
 сайт - в сайте как пака
+I
 RewriteEngine On
-
 RewriteCond %{HTTP_HOST} ^/dreamcar.dev/2016$
 RewriteRule ((?s).*) /2016/$1 [L]
+
+II
+RewriteEngine On
+RewriteBase /2016
 + в конфиге поправить http:/domain/dev/2016
-
-
 
 
 whereis php - пути к исполняшкам
