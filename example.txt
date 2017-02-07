@@ -1,3 +1,20 @@
+сфинкс на линухах, действия при неподнимачестьти
+
+поправить конфиг
+сделать
+indexer rotate --all
+
+сделать
+service sphinxsearch stop
+проверить файлик с пид
+убить всех демонов
+ps -e | grep search
+kill ...
+
+service sphinxsearch start
+даже если с ошибкой - раздача будет
+
+
 #loravel-composer-ets
 
 бока при миграции
