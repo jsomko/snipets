@@ -1,3 +1,17 @@
+команды по сентосу 7, в куче
+
+apachectl start
+apachectl stop
+apachectl restart
+/sbin/service httpd restart
+
+открыть фаервол
+firewall-cmd --get-active-zones
+список зон, тут это dmz
+firewall-cmd --zone=dmz --add-port=80/tcp --permanent
+firewall-cmd --reload
+
+
 показать список сервисов содерж. php
 ps ax | grep php
 
