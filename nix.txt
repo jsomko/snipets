@@ -1,5 +1,11 @@
 команды по сентосу 7, в куче
 
+все юзеры
+cat /etc/passwd
+chown apache:apache /var/www/html/osbb24.com/
+chmod -R 777 /var/www/html/osbb24.com/
+
+
 apachectl start
 apachectl stop
 apachectl restart
@@ -10,6 +16,18 @@ firewall-cmd --get-active-zones
 список зон, тут это dmz
 firewall-cmd --zone=dmz --add-port=80/tcp --permanent
 firewall-cmd --reload
+
+mysql
+https://www.linode.com/docs/databases/mysql/how-to-install-mysql-on-centos-7
+
+create database osbb24;
+create databas osbb24_nagorniy;
+create user 'user'@'localhost' identified by 'pass';
+
+grant all on osbb24.* to 'testuser' identified by 'password';
+
+
+
 
 
 показать список сервисов содерж. php
