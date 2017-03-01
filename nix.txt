@@ -1,5 +1,28 @@
 команды по сентосу 7, в куче
 
+ахтунг с selinux
+https://blog.lysender.com/2015/07/centos-7-selinux-php-apache-cannot-writeaccess-file-no-matter-what/
+
+# Ownership
+sudo chown apache:apache -R /data/www/html/sites/mysite
+cd /data/www/html/sites/mysite
+ 
+# File permissions, recursive
+find . -type f -exec chmod 0644 {} \;
+ 
+# Dir permissions, recursive
+find . -type d -exec chmod 0755 {} \;
+ 
+# SELinux serve files off Apache, resursive
+sudo chcon -t httpd_sys_content_t /data/www/html/sites/mysite -R
+ 
+# Allow write only to specific dirs
+sudo chcon -t httpd_sys_rw_content_t /data/www/html/sites/mysite/logs -R
+sudo chcon -t httpd_sys_rw_content_t /data/www/html/sites/mysite/uploads -R
+
+
+
+
 все юзеры
 cat /etc/passwd
 chown apache:apache /var/www/html/osbb24.com/
