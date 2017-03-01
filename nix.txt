@@ -54,7 +54,7 @@ grant all on osbb24.* to 'testuser' identified by 'password';
 
 
 показать список сервисов содерж. php
-ps ax | grep php
+ps ax | grep php 
 
 
 
