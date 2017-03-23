@@ -1,3 +1,13 @@
+пример конфига ля гугла
+	// 'options' => array(
+	// 	'hostname' => 'smtp.gmail.com',
+	// 	'username' => 'ооs@aоо.net',
+	// 	'password' => 'Zоооpass',
+	// 	'port' => 465,
+	// 	'encryption' => 'ssl', #tls
+	// ),
+
+
 сфинкс на линухах, действия при неподнимачестьти
 
 поправить конфиг
