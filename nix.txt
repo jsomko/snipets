@@ -1,3 +1,31 @@
+немного ssl
+  971  netstat -tulpn
+  972  cd /etc/nginx/
+  973  ll
+  974  ll conf.d/
+  975  cat conf.d/efurshet.conf
+  976  cd conf.d/
+  977  cp efurshet.conf{,.orig}
+  978  cd ..
+  979  mkdir ssl
+  980  vim conf.d/efurshet.conf
+  981  nginx -v
+  982  ll
+  983  ll conf.d/
+  984  vim conf.d/efurshet.conf
+  985  vim /etc/nginx/ssl/efurshet.com_privkey.pem
+  986  nginx -t
+  987  service nginx reload
+  988  netstat -tulpn
+  989  iptables -L -v -n
+  990  uname -a
+  991  vim /etc/sysconfig/iptables
+  992  service iptables reload
+  993  history
+
+
+
+
 команды по сентосу 7, в куче
 
 ахтунг с selinux
