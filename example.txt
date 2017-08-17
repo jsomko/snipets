@@ -7,6 +7,13 @@
 	// 	'encryption' => 'ssl', #tls
 	// ),
 
+иногда при ротации ругается на лок файлов, делать это
+ps ax | grep searchd
+searchd --stop
+indexer rotate --all
+searchd
+
+
 
 сфинкс на линухах, действия при неподнимачестьти
 
