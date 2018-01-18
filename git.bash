@@ -2,6 +2,11 @@
 ## разворачикание реп+реп, если понадобиться востпроизвести
 ## bb - реп подушки (Bitbucket)
 ## alt - наш реп
+## ключи пути называть так
+##  c:\Users\admin\.ssh\id_rsa
+##  c:\Users\admin\.ssh\id_rsa.ppk
+##  c:\Users\admin\.ssh\id_rsa.pub
+
 
 admin@user-17-PC MINGW64 /d/OpenServer/domains/pod-desktop.local/www (master)
 $ git remote add bb git@bitbucket.org:podushka/podushka.com.ua.git
